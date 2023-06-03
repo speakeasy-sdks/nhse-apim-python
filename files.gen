@@ -1,3 +1,4 @@
+src/pds_fhir/sdkconfiguration.py
 src/pds_fhir/sdk.py
 .gitignore
 pylintrc
