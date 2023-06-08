@@ -345,7 +345,7 @@ class PdsFhir:
         url = utils.generate_url(operations.GetPatientRequest, base_url, '/Patient/{id}', request)
         headers = utils.get_headers(request)
         headers['Accept'] = 'application/fhir+json;q=1, application/fhir+json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = self.sdk_configuration.client
         
@@ -399,7 +399,7 @@ class PdsFhir:
         url = utils.generate_url(operations.GetRelatedPeopleRequest, base_url, '/Patient/{id}/RelatedPerson', request)
         headers = utils.get_headers(request)
         headers['Accept'] = 'application/fhir+json;q=1, application/fhir+json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = self.sdk_configuration.client
         
@@ -650,7 +650,7 @@ class PdsFhir:
         headers = utils.get_headers(request)
         query_params = utils.get_query_params(operations.SearchPatientRequest, request)
         headers['Accept'] = 'application/fhir+json;q=1, application/fhir+json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = self.sdk_configuration.client
         
@@ -1451,7 +1451,7 @@ class PdsFhir:
         if data is None and form is None:
             raise Exception('request body is required')
         headers['Accept'] = 'application/fhir+json;q=1, application/fhir+json;q=0.7, application/fhir+json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = self.sdk_configuration.client
         
