@@ -1,0 +1,11 @@
+# GetPatient200ApplicationFhirPlusJSONExtension8
+
+An extension to carry the reason a PDS record has been removed from the Patient Demographic Service. This will only be populated on a retrieval and not a search.
+
+
+## Fields
+
+| Field                                                                                                                             | Type                                                                                                                              | Required                                                                                                                          | Description                                                                                                                       |
+| --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `extension`                                                                                                                       | list[*Any*]                                                                                                                       | :heavy_check_mark:                                                                                                                | An extension reason a PDS record has been removed from the Patient Demographic Service.                                           |
+| `url`                                                                                                                             | [GetPatient200ApplicationFhirPlusJSONExtension8URL](../../models/operations/getpatient200applicationfhirplusjsonextension8url.md) | :heavy_check_mark:                                                                                                                | Definition of the removal from registration extension.                                                                            |

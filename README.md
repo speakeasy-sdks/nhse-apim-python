@@ -34,12 +34,12 @@ if res.get_patient_200_application_fhir_plus_json_object is not None:
 <!-- Start SDK Available Operations -->
 ## Available Resources and Operations
 
-### [PdsFhir SDK](docs/pdsfhir/README.md)
+### [PdsFhir SDK](docs/sdks/pdsfhir/README.md)
 
-* [get_patient](docs/pdsfhir/README.md#get_patient) - Get patient details
-* [get_related_people](docs/pdsfhir/README.md#get_related_people) - Get a patient's related people
-* [search_patient](docs/pdsfhir/README.md#search_patient) - Search for a patient
-* [update_patient_partial](docs/pdsfhir/README.md#update_patient_partial) - Update patient details
+* [get_patient](docs/sdks/pdsfhir/README.md#get_patient) - Get patient details
+* [get_related_people](docs/sdks/pdsfhir/README.md#get_related_people) - Get a patient's related people
+* [search_patient](docs/sdks/pdsfhir/README.md#search_patient) - Search for a patient
+* [update_patient_partial](docs/sdks/pdsfhir/README.md#update_patient_partial) - Update patient details
 <!-- End SDK Available Operations -->
 
 ### Maturity

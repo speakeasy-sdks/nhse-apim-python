@@ -1,0 +1,11 @@
+# UpdatePatientPartial200ApplicationFhirPlusJSONExtension8Extension2ValuePeriod
+
+The effective time of removal of the Patient record from PDS.
+
+
+## Fields
+
+| Field                                                                                               | Type                                                                                                | Required                                                                                            | Description                                                                                         | Example                                                                                             |
+| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `end`                                                                                               | [date](https://docs.python.org/3/library/datetime.html#date-objects)                                | :heavy_minus_sign:                                                                                  | End date of time period, if known and if not ongoing, in format `yyyy-mm-dd`. Can be a future date. | 2021-12-31T00:00:00+00:00                                                                           |
+| `start`                                                                                             | [date](https://docs.python.org/3/library/datetime.html#date-objects)                                | :heavy_check_mark:                                                                                  | Start date of time period, if known, in format `yyyy-mm-dd`. Can be a future date.                  | 2020-01-01T00:00:00+00:00                                                                           |

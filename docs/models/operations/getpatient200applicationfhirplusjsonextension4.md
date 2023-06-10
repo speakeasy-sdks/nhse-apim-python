@@ -1,0 +1,11 @@
+# GetPatient200ApplicationFhirPlusJSONExtension4
+
+Wrapper object for death notification details.
+
+
+## Fields
+
+| Field                                                                                                                             | Type                                                                                                                              | Required                                                                                                                          | Description                                                                                                                       |
+| --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `extension`                                                                                                                       | list[*Any*]                                                                                                                       | :heavy_check_mark:                                                                                                                | Array containing exactly one death notification status code object and exactly one effective date object.                         |
+| `url`                                                                                                                             | [GetPatient200ApplicationFhirPlusJSONExtension4URL](../../models/operations/getpatient200applicationfhirplusjsonextension4url.md) | :heavy_check_mark:                                                                                                                | Definition of death notification extension.                                                                                       |

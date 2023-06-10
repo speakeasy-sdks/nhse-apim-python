@@ -331,6 +331,18 @@ if res.get_patient_200_application_fhir_plus_json_object is not None:
     # handle response
 ```
 
+### Parameters
+
+| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `request`                                                                    | [operations.GetPatientRequest](../../models/operations/getpatientrequest.md) | :heavy_check_mark:                                                           | The request object to use for the request.                                   |
+
+
+### Response
+
+**[operations.GetPatientResponse](../../models/operations/getpatientresponse.md)**
+
+
 ## get_related_people
 
 ## Overview
@@ -379,6 +391,18 @@ res = s.pds_fhir.get_related_people(req)
 if res.get_related_people_200_application_fhir_plus_json_object is not None:
     # handle response
 ```
+
+### Parameters
+
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `request`                                                                                | [operations.GetRelatedPeopleRequest](../../models/operations/getrelatedpeoplerequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+
+
+### Response
+
+**[operations.GetRelatedPeopleResponse](../../models/operations/getrelatedpeopleresponse.md)**
+
 
 ## search_patient
 
@@ -645,6 +669,18 @@ res = s.pds_fhir.search_patient(req)
 if res.search_patient_200_application_fhir_plus_json_object is not None:
     # handle response
 ```
+
+### Parameters
+
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `request`                                                                          | [operations.SearchPatientRequest](../../models/operations/searchpatientrequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
+
+
+### Response
+
+**[operations.SearchPatientResponse](../../models/operations/searchpatientresponse.md)**
+
 
 ## update_patient_partial
 
@@ -1439,26 +1475,17 @@ req = operations.UpdatePatientPartialRequest(
             operations.UpdatePatientPartialRequestBodyPatches(
                 op=operations.UpdatePatientPartialRequestBodyPatchesOp.ADD,
                 path='minus',
-                value={
-                    "iusto": 'excepturi',
-                    "nisi": 'recusandae',
-                    "temporibus": 'ab',
-                },
+                value=operations.UpdatePatientPartialRequestBodyPatchesValue3(),
             ),
             operations.UpdatePatientPartialRequestBodyPatches(
-                op=operations.UpdatePatientPartialRequestBodyPatchesOp.ADD,
-                path='veritatis',
-                value=20218,
+                op=operations.UpdatePatientPartialRequestBodyPatchesOp.REPLACE,
+                path='iusto',
+                value=392785,
             ),
             operations.UpdatePatientPartialRequestBodyPatches(
-                op=operations.UpdatePatientPartialRequestBodyPatchesOp.ADD,
-                path='repellendus',
-                value={
-                    "odit": 'at',
-                    "at": 'maiores',
-                    "molestiae": 'quod',
-                    "quod": 'esse',
-                },
+                op=operations.UpdatePatientPartialRequestBodyPatchesOp.TEST,
+                path='temporibus',
+                value='quis',
             ),
         ],
     ),
@@ -1472,3 +1499,15 @@ res = s.pds_fhir.update_patient_partial(req)
 if res.update_patient_partial_200_application_fhir_plus_json_object is not None:
     # handle response
 ```
+
+### Parameters
+
+| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `request`                                                                                        | [operations.UpdatePatientPartialRequest](../../models/operations/updatepatientpartialrequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
+
+
+### Response
+
+**[operations.UpdatePatientPartialResponse](../../models/operations/updatepatientpartialresponse.md)**
+

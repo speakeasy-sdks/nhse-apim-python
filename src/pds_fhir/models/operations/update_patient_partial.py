@@ -18,10 +18,17 @@ class UpdatePatientPartialRequestBodyPatchesOp(str, Enum):
     TEST = 'test'
 
 
+
+@dataclasses.dataclass
+class UpdatePatientPartialRequestBodyPatchesValue3:
+    r"""The information to be added or replaced. Should not be included on a remove."""
+    pass
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartialRequestBodyPatches:
-    
     op: UpdatePatientPartialRequestBodyPatchesOp = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('op') }})
     path: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('path') }})
     r"""The location of the information to remove, add or replace. The '-' character must be used to add new items to arrays, e.g. names, addresses.
@@ -31,16 +38,20 @@ class UpdatePatientPartialRequestBodyPatches:
     r"""The information to be added or replaced. Should not be included on a remove."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartialRequestBody:
-    
     patches: list[UpdatePatientPartialRequestBodyPatches] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('patches') }})
     
 
+
+
+
 @dataclasses.dataclass
 class UpdatePatientPartialRequest:
-    
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     r"""The patient's NHS number. The primary identifier of a patient, unique within NHS England and Wales. Always 10 digits and must be a [valid NHS number](https://www.datadictionary.nhs.uk/attributes/nhs_number.html)."""
     if_match: str = dataclasses.field(metadata={'header': { 'field_name': 'If-Match', 'style': 'simple', 'explode': False }})
@@ -76,6 +87,8 @@ class UpdatePatientPartialRequest:
     If you re-send a failed request, use the same value in this header.
     """
     
+
+
 class UpdatePatientPartial503ApplicationFhirPlusJSONIssueCode(str, Enum):
     r"""FHIR error code."""
     INVALID = 'invalid'
@@ -112,9 +125,9 @@ class UpdatePatientPartial503ApplicationFhirPlusJSONIssueCode(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial503ApplicationFhirPlusJSONIssueDetailsCoding:
-    
     code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code'), 'exclude': lambda f: f is None }})
     r"""Symbol in syntax defined by the system."""
     display: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display'), 'exclude': lambda f: f is None }})
@@ -125,13 +138,17 @@ class UpdatePatientPartial503ApplicationFhirPlusJSONIssueDetailsCoding:
     r"""Version of the coding system in use."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial503ApplicationFhirPlusJSONIssueDetails:
     r"""Internal error code."""
-    
     coding: Optional[list[UpdatePatientPartial503ApplicationFhirPlusJSONIssueDetailsCoding]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('coding'), 'exclude': lambda f: f is None }})
     
+
+
 class UpdatePatientPartial503ApplicationFhirPlusJSONIssueSeverity(str, Enum):
     r"""Severity of the error."""
     FATAL = 'fatal'
@@ -141,9 +158,9 @@ class UpdatePatientPartial503ApplicationFhirPlusJSONIssueSeverity(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial503ApplicationFhirPlusJSONIssue:
-    
     code: UpdatePatientPartial503ApplicationFhirPlusJSONIssueCode = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code') }})
     r"""FHIR error code."""
     severity: UpdatePatientPartial503ApplicationFhirPlusJSONIssueSeverity = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('severity') }})
@@ -156,18 +173,22 @@ class UpdatePatientPartial503ApplicationFhirPlusJSONIssue:
     r"""FHIRPath of element(s) related to the error."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial503ApplicationFhirPlusJSON:
     r"""Outcome of an operation that does not result in a resource or bundle being returned, for example an error or an async/batch submission.
     There are a number of possible error codes that can be returned along with a more detailed description in the `display` field.
     """
-    
     issue: Optional[list[UpdatePatientPartial503ApplicationFhirPlusJSONIssue]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('issue'), 'exclude': lambda f: f is None }})
     r"""List of issues that have occurred."""
     resource_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('resourceType'), 'exclude': lambda f: f is None }})
     r"""FHIR Resource Type."""
     
+
+
 class UpdatePatientPartial4XXApplicationFhirPlusJSONIssueCode(str, Enum):
     r"""FHIR error code."""
     INVALID = 'invalid'
@@ -204,9 +225,9 @@ class UpdatePatientPartial4XXApplicationFhirPlusJSONIssueCode(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial4XXApplicationFhirPlusJSONIssueDetailsCoding:
-    
     code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code'), 'exclude': lambda f: f is None }})
     r"""Symbol in syntax defined by the system."""
     display: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display'), 'exclude': lambda f: f is None }})
@@ -217,13 +238,17 @@ class UpdatePatientPartial4XXApplicationFhirPlusJSONIssueDetailsCoding:
     r"""Version of the coding system in use."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial4XXApplicationFhirPlusJSONIssueDetails:
     r"""Internal error code."""
-    
     coding: Optional[list[UpdatePatientPartial4XXApplicationFhirPlusJSONIssueDetailsCoding]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('coding'), 'exclude': lambda f: f is None }})
     
+
+
 class UpdatePatientPartial4XXApplicationFhirPlusJSONIssueSeverity(str, Enum):
     r"""Severity of the error."""
     FATAL = 'fatal'
@@ -233,9 +258,9 @@ class UpdatePatientPartial4XXApplicationFhirPlusJSONIssueSeverity(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial4XXApplicationFhirPlusJSONIssue:
-    
     code: UpdatePatientPartial4XXApplicationFhirPlusJSONIssueCode = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code') }})
     r"""FHIR error code."""
     severity: UpdatePatientPartial4XXApplicationFhirPlusJSONIssueSeverity = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('severity') }})
@@ -248,77 +273,91 @@ class UpdatePatientPartial4XXApplicationFhirPlusJSONIssue:
     r"""FHIRPath of element(s) related to the error."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial4XXApplicationFhirPlusJSON:
     r"""Outcome of an operation that does not result in a resource or bundle being returned, for example an error or an async/batch submission.
     There are a number of possible error codes that can be returned along with a more detailed description in the `display` field.
     """
-    
     issue: Optional[list[UpdatePatientPartial4XXApplicationFhirPlusJSONIssue]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('issue'), 'exclude': lambda f: f is None }})
     r"""List of issues that have occurred."""
     resource_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('resourceType'), 'exclude': lambda f: f is None }})
     r"""FHIR Resource Type."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONAddressExtensionExtension2:
     r"""Value of the address key."""
-    
     url: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
     r"""Always 'value'."""
     value_string: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('valueString') }})
     r"""Address key in PAF format. An 8 digit number including leading zeroes, formatted as a string."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONAddressExtensionExtension1ValueCoding:
     r"""URL of specification of address key format."""
-    
     code: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code') }})
     r"""Address Key system. Always 'PAF'."""
     system: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('system') }})
     r"""URL of Code System that describes available Address Key formats."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONAddressExtensionExtension1:
     r"""Coding system of the address key."""
-    
     url: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
     r"""Always 'type'."""
     value_coding: UpdatePatientPartial200ApplicationFhirPlusJSONAddressExtensionExtension1ValueCoding = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('valueCoding') }})
     r"""URL of specification of address key format."""
     
+
+
 class UpdatePatientPartial200ApplicationFhirPlusJSONAddressExtensionURL(str, Enum):
     r"""URL of specification of the AddressKey extension."""
     HTTPS_FHIR_HL7_ORG_UK_STRUCTURE_DEFINITION_EXTENSION_UK_CORE_ADDRESS_KEY = 'https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AddressKey'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONAddressExtension:
     r"""Unique identifier for an address."""
-    
     extension: Optional[list[Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('extension'), 'exclude': lambda f: f is None }})
     r"""Specification of address key system and address key value. Contains exactly two items: one describing the code system the Address Key uses, and the other specifying the value of the Address Key."""
     url: Optional[UpdatePatientPartial200ApplicationFhirPlusJSONAddressExtensionURL] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url'), 'exclude': lambda f: f is None }})
     r"""URL of specification of the AddressKey extension."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONAddressPeriod:
     r"""Business effective period when name was, is, or will be in use."""
-    
     start: date = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('start'), 'encoder': utils.dateisoformat(False), 'decoder': utils.datefromisoformat, 'mm_field': fields.DateTime(format='iso') }})
     r"""Start date of time period, if known, in format `yyyy-mm-dd`. Can be a future date."""
     end: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'mm_field': fields.DateTime(format='iso'), 'exclude': lambda f: f is None }})
     r"""End date of time period, if known and if not ongoing, in format `yyyy-mm-dd`. Can be a future date."""
     
+
+
 class UpdatePatientPartial200ApplicationFhirPlusJSONAddressText(str, Enum):
     r"""Where a `temp` address is provided a descriptor text must be sent.
     The list of possible values are:
@@ -365,10 +404,10 @@ class UpdatePatientPartial200ApplicationFhirPlusJSONAddressUse(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONAddress:
     r"""An address associated with the patient."""
-    
     use: UpdatePatientPartial200ApplicationFhirPlusJSONAddressUse = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('use') }})
     r"""Purpose of this address:
       * `home` - the home address is the patient's normal residence. Home address is also known as usual, main, registered, current or permanent address
@@ -422,21 +461,25 @@ class UpdatePatientPartial200ApplicationFhirPlusJSONAddress:
     """
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONSchemaForAPatientContactPeriod:
     r"""Business effective period when name was, is, or will be in use."""
-    
     start: date = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('start'), 'encoder': utils.dateisoformat(False), 'decoder': utils.datefromisoformat, 'mm_field': fields.DateTime(format='iso') }})
     r"""Start date of time period, if known, in format `yyyy-mm-dd`. Can be a future date."""
     end: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'mm_field': fields.DateTime(format='iso'), 'exclude': lambda f: f is None }})
     r"""End date of time period, if known and if not ongoing, in format `yyyy-mm-dd`. Can be a future date."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONSchemaForAPatientContactRelationshipCoding:
-    
     code: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code') }})
     r"""Coded value for contact relationship."""
     display: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display'), 'exclude': lambda f: f is None }})
@@ -445,23 +488,27 @@ class UpdatePatientPartial200ApplicationFhirPlusJSONSchemaForAPatientContactRela
     r"""URL of Code System that describes available contact relationships."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONSchemaForAPatientContactRelationship:
-    
     coding: list[UpdatePatientPartial200ApplicationFhirPlusJSONSchemaForAPatientContactRelationshipCoding] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('coding') }})
     r"""Exactly one contact relationship."""
     
+
+
 class UpdatePatientPartial200ApplicationFhirPlusJSONSchemaForAPatientContactTelecomExtensionURL(str, Enum):
     r"""Definition of other contact system extension."""
     HTTPS_FHIR_HL7_ORG_UK_STRUCTURE_DEFINITION_EXTENSION_UK_CORE_OTHER_CONTACT_SYSTEM = 'https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-OtherContactSystem'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONSchemaForAPatientContactTelecomExtensionValueCoding:
     r"""URL of specification of other contact systems."""
-    
     code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code'), 'exclude': lambda f: f is None }})
     r"""Coded value for the other contact system in place."""
     display: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display'), 'exclude': lambda f: f is None }})
@@ -470,27 +517,33 @@ class UpdatePatientPartial200ApplicationFhirPlusJSONSchemaForAPatientContactTele
     r"""URL of Code System that describes available contact relationships."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONSchemaForAPatientContactTelecomExtension:
     r"""Wrapped object for other contact system details."""
-    
     url: Optional[UpdatePatientPartial200ApplicationFhirPlusJSONSchemaForAPatientContactTelecomExtensionURL] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url'), 'exclude': lambda f: f is None }})
     r"""Definition of other contact system extension."""
     value_coding: Optional[UpdatePatientPartial200ApplicationFhirPlusJSONSchemaForAPatientContactTelecomExtensionValueCoding] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('valueCoding'), 'exclude': lambda f: f is None }})
     r"""URL of specification of other contact systems."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONSchemaForAPatientContactTelecomPeriod:
     r"""Business effective period when name was, is, or will be in use."""
-    
     start: date = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('start'), 'encoder': utils.dateisoformat(False), 'decoder': utils.datefromisoformat, 'mm_field': fields.DateTime(format='iso') }})
     r"""Start date of time period, if known, in format `yyyy-mm-dd`. Can be a future date."""
     end: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'mm_field': fields.DateTime(format='iso'), 'exclude': lambda f: f is None }})
     r"""End date of time period, if known and if not ongoing, in format `yyyy-mm-dd`. Can be a future date."""
     
+
+
 class UpdatePatientPartial200ApplicationFhirPlusJSONSchemaForAPatientContactTelecomSystem(str, Enum):
     r"""Means of communication, such as phone or email."""
     PHONE = 'phone'
@@ -507,10 +560,10 @@ class UpdatePatientPartial200ApplicationFhirPlusJSONSchemaForAPatientContactTele
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONSchemaForAPatientContactTelecom:
     r"""A contact point, such as a phone number or email address"""
-    
     system: UpdatePatientPartial200ApplicationFhirPlusJSONSchemaForAPatientContactTelecomSystem = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('system') }})
     r"""Means of communication, such as phone or email."""
     value: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value') }})
@@ -528,10 +581,12 @@ class UpdatePatientPartial200ApplicationFhirPlusJSONSchemaForAPatientContactTele
     r"""Location associated with communication system."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONSchemaForAPatientContact:
-    
     relationship: list[UpdatePatientPartial200ApplicationFhirPlusJSONSchemaForAPatientContactRelationship] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('relationship') }})
     r"""The contact relationship wrapper object that holds the details of the relationship to the patient.
     
@@ -543,32 +598,38 @@ class UpdatePatientPartial200ApplicationFhirPlusJSONSchemaForAPatientContact:
     period: Optional[UpdatePatientPartial200ApplicationFhirPlusJSONSchemaForAPatientContactPeriod] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('period'), 'exclude': lambda f: f is None }})
     r"""Business effective period when name was, is, or will be in use."""
     
+
+
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension8Extension2URL(str, Enum):
     r"""Key of this object. Always `effectiveTime`."""
     EFFECTIVE_TIME = 'effectiveTime'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension8Extension2ValuePeriod:
     r"""The effective time of removal of the Patient record from PDS."""
-    
     start: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('start'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
     r"""Start date of time period, if known, in format `yyyy-mm-dd`. Can be a future date."""
     end: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso'), 'exclude': lambda f: f is None }})
     r"""End date of time period, if known and if not ongoing, in format `yyyy-mm-dd`. Can be a future date."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension8Extension2:
     r"""Wrapper object for removal from registration effective time."""
-    
     url: UpdatePatientPartial200ApplicationFhirPlusJSONExtension8Extension2URL = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
     r"""Key of this object. Always `effectiveTime`."""
     value_period: UpdatePatientPartial200ApplicationFhirPlusJSONExtension8Extension2ValuePeriod = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('valuePeriod') }})
     r"""The effective time of removal of the Patient record from PDS."""
     
+
+
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension8Extension1URL(str, Enum):
     r"""To identify the removal reason code."""
     REMOVAL_FROM_REGISTRATION_CODE = 'removalFromRegistrationCode'
@@ -584,9 +645,9 @@ class UpdatePatientPartial200ApplicationFhirPlusJSONExtension8Extension1ValueCod
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension8Extension1ValueCodeableConceptCoding:
-    
     code: UpdatePatientPartial200ApplicationFhirPlusJSONExtension8Extension1ValueCodeableConceptCodingCode = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code') }})
     r"""A CodeSystem that identifies the reason a PDS record has been removed."""
     display: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display') }})
@@ -595,49 +656,57 @@ class UpdatePatientPartial200ApplicationFhirPlusJSONExtension8Extension1ValueCod
     r"""URL of the Removal Reason Exit Code. Always uses the 'PDS-RemovalReasonExitCode' Code System."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension8Extension1ValueCodeableConcept:
     r"""PDS Removal Reason Exit Code"""
-    
     coding: list[UpdatePatientPartial200ApplicationFhirPlusJSONExtension8Extension1ValueCodeableConceptCoding] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('coding') }})
     r"""Array containing exactly one removal reason exit code object"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension8Extension1:
     r"""Wrapper object for removalFromRegistrationCode."""
-    
     url: UpdatePatientPartial200ApplicationFhirPlusJSONExtension8Extension1URL = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
     r"""To identify the removal reason code."""
     value_codeable_concept: UpdatePatientPartial200ApplicationFhirPlusJSONExtension8Extension1ValueCodeableConcept = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('valueCodeableConcept') }})
     r"""PDS Removal Reason Exit Code"""
     
+
+
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension8URL(str, Enum):
     r"""Definition of the removal from registration extension."""
     HTTPS_FHIR_NHS_UK_STRUCTURE_DEFINITION_EXTENSION_PDS_REMOVAL_FROM_REGISTRATION = 'https://fhir.nhs.uk/StructureDefinition/Extension-PDS-RemovalFromRegistration'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension8:
     r"""An extension to carry the reason a PDS record has been removed from the Patient Demographic Service. This will only be populated on a retrieval and not a search."""
-    
     extension: list[Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('extension') }})
     r"""An extension reason a PDS record has been removed from the Patient Demographic Service."""
     url: UpdatePatientPartial200ApplicationFhirPlusJSONExtension8URL = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
     r"""Definition of the removal from registration extension."""
     
+
+
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension7URL(str, Enum):
     r"""Definition of place of birth extension."""
     HTTP_HL7_ORG_FHIR_STRUCTURE_DEFINITION_PATIENT_BIRTH_PLACE = 'http://hl7.org/fhir/StructureDefinition/patient-birthPlace'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension7ValueAddress:
-    
     city: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('city'), 'exclude': lambda f: f is None }})
     r"""Town or city of birth."""
     country: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('country'), 'exclude': lambda f: f is None }})
@@ -658,30 +727,36 @@ class UpdatePatientPartial200ApplicationFhirPlusJSONExtension7ValueAddress:
     r"""County or metropolitan district of birth."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension7:
     r"""Wrapper object for place of birth details. This will not be returned on a restricted patient."""
-    
     url: UpdatePatientPartial200ApplicationFhirPlusJSONExtension7URL = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
     r"""Definition of place of birth extension."""
     value_address: UpdatePatientPartial200ApplicationFhirPlusJSONExtension7ValueAddress = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('valueAddress') }})
     
+
+
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension6Extension3URL(str, Enum):
     r"""Key of this object. Always `PreferredContactTimes`."""
     PREFERRED_CONTACT_TIMES = 'PreferredContactTimes'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension6Extension3:
     r"""Wrapper object for preferred contact times."""
-    
     url: UpdatePatientPartial200ApplicationFhirPlusJSONExtension6Extension3URL = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
     r"""Key of this object. Always `PreferredContactTimes`."""
     value_string: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('valueString') }})
     r"""A free-text description about the preferred contact times."""
     
+
+
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension6Extension2URL(str, Enum):
     r"""Key of this object. Always `PreferredContactMethod`."""
     PREFERRED_CONTACT_METHOD = 'PreferredContactMethod'
@@ -692,9 +767,9 @@ class UpdatePatientPartial200ApplicationFhirPlusJSONExtension6Extension2ValueCod
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension6Extension2ValueCodeableConceptCoding:
-    
     code: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code') }})
     r"""A code to identify to identify the preferred contact method of a patient, contact or related person.
     * 1	- Letter
@@ -712,33 +787,39 @@ class UpdatePatientPartial200ApplicationFhirPlusJSONExtension6Extension2ValueCod
     r"""Definition of the preferred contact method extension."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension6Extension2ValueCodeableConcept:
     r"""Preferred Contact Method."""
-    
     coding: list[UpdatePatientPartial200ApplicationFhirPlusJSONExtension6Extension2ValueCodeableConceptCoding] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('coding') }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension6Extension2:
     r"""Wrapper object for preferred contact method."""
-    
     url: UpdatePatientPartial200ApplicationFhirPlusJSONExtension6Extension2URL = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
     r"""Key of this object. Always `PreferredContactMethod`."""
     value_codeable_concept: UpdatePatientPartial200ApplicationFhirPlusJSONExtension6Extension2ValueCodeableConcept = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('valueCodeableConcept') }})
     r"""Preferred Contact Method."""
     
+
+
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension6Extension1ValueCodeableConceptCodingSystem(str, Enum):
     r"""Definition of the preferred written communication extension."""
     HTTPS_FHIR_HL7_ORG_UK_CODE_SYSTEM_UK_CORE_PREFERRED_WRITTEN_COMMUNICATION_FORMAT = 'https://fhir.hl7.org.uk/CodeSystem/UKCore-PreferredWrittenCommunicationFormat'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension6Extension1ValueCodeableConceptCoding:
-    
     code: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code') }})
     r"""A code to identify the preferred written communication format of a patient, contact or related person.
     * 11 - Large print
@@ -751,63 +832,73 @@ class UpdatePatientPartial200ApplicationFhirPlusJSONExtension6Extension1ValueCod
     r"""Definition of the preferred written communication extension."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension6Extension1ValueCodeableConcept:
     r"""Preferred Written Communication Format."""
-    
     coding: list[UpdatePatientPartial200ApplicationFhirPlusJSONExtension6Extension1ValueCodeableConceptCoding] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('coding') }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension6Extension1:
     r"""Wrapper object for preferred written communication format."""
-    
     url: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
     r"""Key of this object. Always `PreferredWrittenCommunicationFormat`."""
     value_codeable_concept: UpdatePatientPartial200ApplicationFhirPlusJSONExtension6Extension1ValueCodeableConcept = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('valueCodeableConcept') }})
     r"""Preferred Written Communication Format."""
     
+
+
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension6URL(str, Enum):
     r"""Definition of the contact preference extension."""
     HTTPS_FHIR_HL7_ORG_UK_STRUCTURE_DEFINITION_EXTENSION_UK_CORE_CONTACT_PREFERENCE = 'https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-ContactPreference'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension6:
     r"""Wrapper object for preferred contact details; the written communication format, preferred contact time and method. This will only be populated on a retrieval and not a search."""
-    
     extension: list[Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('extension') }})
     r"""Wrapper array containing zero or one preferred contact method, zero or one preferred written communication format; and zero or one preferred contact time."""
     url: UpdatePatientPartial200ApplicationFhirPlusJSONExtension6URL = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
     r"""Definition of the contact preference extension."""
     
+
+
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension5Extension2URL(str, Enum):
     r"""Key of this object. Always `interpreterRequired`."""
     INTERPRETER_REQUIRED = 'interpreterRequired'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension5Extension2:
     r"""Wrapper object for whether an interpreter is required."""
-    
     url: UpdatePatientPartial200ApplicationFhirPlusJSONExtension5Extension2URL = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
     r"""Key of this object. Always `interpreterRequired`."""
     value_boolean: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('valueBoolean') }})
     r"""Whether an interpreter is required."""
     
+
+
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension5Extension1URL(str, Enum):
     r"""Key of this object. Always `language`."""
     LANGUAGE = 'language'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension5Extension1ValueCodeableConceptCoding:
-    
     code: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code') }})
     r"""Language code based on [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard plus extensions for braille, makaton and sign languages, which are:
     * `q1` - Braille
@@ -825,55 +916,65 @@ class UpdatePatientPartial200ApplicationFhirPlusJSONExtension5Extension1ValueCod
     r"""Version of the language code system."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension5Extension1ValueCodeableConcept:
     r"""Human language."""
-    
     coding: list[UpdatePatientPartial200ApplicationFhirPlusJSONExtension5Extension1ValueCodeableConceptCoding] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('coding') }})
     r"""Exactly one language code."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension5Extension1:
     r"""Wrapper object for communication language."""
-    
     url: UpdatePatientPartial200ApplicationFhirPlusJSONExtension5Extension1URL = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
     r"""Key of this object. Always `language`."""
     value_codeable_concept: UpdatePatientPartial200ApplicationFhirPlusJSONExtension5Extension1ValueCodeableConcept = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('valueCodeableConcept') }})
     r"""Human language."""
     
+
+
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension5URL(str, Enum):
     r"""Definition of communication extension."""
     HTTPS_FHIR_HL7_ORG_UK_STRUCTURE_DEFINITION_EXTENSION_UK_CORE_NHS_COMMUNICATION = 'https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-NHSCommunication'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension5:
     r"""Wrapper object for communication details. This will only be populated on a retrieval and not a search."""
-    
     extension: list[Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('extension') }})
     r"""Definition of communication extension, The array must have two items, a valueCodeableConcept for the language and a valueBoolean for if an interpreter is required."""
     url: UpdatePatientPartial200ApplicationFhirPlusJSONExtension5URL = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
     r"""Definition of communication extension."""
     
+
+
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension4Extension2URL(str, Enum):
     r"""Key of this object. Always `systemEffectiveDate`."""
     SYSTEM_EFFECTIVE_DATE = 'systemEffectiveDate'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension4Extension2:
     r"""Wrapper object for death notification effective date."""
-    
     url: UpdatePatientPartial200ApplicationFhirPlusJSONExtension4Extension2URL = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
     r"""Key of this object. Always `systemEffectiveDate`."""
     value_date_time: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('valueDateTime'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
     r"""Date and time at which death notification status took effect."""
     
+
+
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension4Extension1URL(str, Enum):
     r"""Key of this object. Always `deathNotificationStatus`."""
     DEATH_NOTIFICATION_STATUS = 'deathNotificationStatus'
@@ -899,9 +1000,9 @@ class UpdatePatientPartial200ApplicationFhirPlusJSONExtension4Extension1ValueCod
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension4Extension1ValueCodeableConceptCoding:
-    
     code: UpdatePatientPartial200ApplicationFhirPlusJSONExtension4Extension1ValueCodeableConceptCodingCode = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code') }})
     r"""Symbol, in syntax, defined by the system:
     * `1` - Informal - death notice received via an update from a local NHS Organisation such as GP or Trust
@@ -919,144 +1020,170 @@ class UpdatePatientPartial200ApplicationFhirPlusJSONExtension4Extension1ValueCod
     r"""Version of the coding system in use."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension4Extension1ValueCodeableConcept:
     r"""Death Notification Status."""
-    
     coding: Optional[list[UpdatePatientPartial200ApplicationFhirPlusJSONExtension4Extension1ValueCodeableConceptCoding]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('coding'), 'exclude': lambda f: f is None }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension4Extension1:
     r"""Wrapper object for death notification status code."""
-    
     url: UpdatePatientPartial200ApplicationFhirPlusJSONExtension4Extension1URL = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
     r"""Key of this object. Always `deathNotificationStatus`."""
     value_codeable_concept: UpdatePatientPartial200ApplicationFhirPlusJSONExtension4Extension1ValueCodeableConcept = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('valueCodeableConcept') }})
     r"""Death Notification Status."""
     
+
+
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension4URL(str, Enum):
     r"""Definition of death notification extension."""
     HTTPS_FHIR_HL7_ORG_UK_STRUCTURE_DEFINITION_EXTENSION_UK_CORE_DEATH_NOTIFICATION_STATUS = 'https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-DeathNotificationStatus'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension4:
     r"""Wrapper object for death notification details."""
-    
     extension: list[Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('extension') }})
     r"""Array containing exactly one death notification status code object and exactly one effective date object."""
     url: UpdatePatientPartial200ApplicationFhirPlusJSONExtension4URL = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
     r"""Definition of death notification extension."""
     
+
+
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension3URL(str, Enum):
     r"""URL of specification of UKCore-MedicalApplianceSupplier FHIR extension."""
     HTTPS_FHIR_HL7_ORG_UK_STRUCTURE_DEFINITION_EXTENSION_UK_CORE_MEDICAL_APPLIANCE_SUPPLIER = 'https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-MedicalApplianceSupplier'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension3ValueReferenceIdentifier:
     r"""Wrapper object for the patient's medical appliance supplier organisation code."""
-    
     value: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value') }})
     r"""Organisation code for the medical appliance supplier, as held in the [Organisation Data Service](https://developer.nhs.uk/apis/ods/)."""
     system: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('system'), 'exclude': lambda f: f is None }})
     r"""URL for the FHIR code system for the ODS organisation code."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension3ValueReference:
     r"""Reference to medical appliance supplier pharmacy `Organization` resource."""
-    
     identifier: UpdatePatientPartial200ApplicationFhirPlusJSONExtension3ValueReferenceIdentifier = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('identifier') }})
     r"""Wrapper object for the patient's medical appliance supplier organisation code."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension3:
     r"""Wrapper object for the patient's medical appliance supplier. This will only be populated on a retrieval and not a search."""
-    
     url: UpdatePatientPartial200ApplicationFhirPlusJSONExtension3URL = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
     r"""URL of specification of UKCore-MedicalApplianceSupplier FHIR extension."""
     value_reference: UpdatePatientPartial200ApplicationFhirPlusJSONExtension3ValueReference = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('valueReference') }})
     r"""Reference to medical appliance supplier pharmacy `Organization` resource."""
     
+
+
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension2URL(str, Enum):
     r"""URL of specification of UKCore-DispensingDoctor FHIR extension."""
     HTTPS_FHIR_HL7_ORG_UK_STRUCTURE_DEFINITION_EXTENSION_UK_CORE_PREFERRED_DISPENSER_ORGANIZATION = 'https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-PreferredDispenserOrganization'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension2ValueReferenceIdentifier:
     r"""Wrapper object for the patient's dispensing doctor organisation code."""
-    
     value: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value') }})
     r"""Organisation code for the dispensing doctor, as held in the [Organisation Data Service](https://developer.nhs.uk/apis/ods/)."""
     system: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('system'), 'exclude': lambda f: f is None }})
     r"""URL for the FHIR code system for the ODS organisation code."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension2ValueReference:
     r"""Reference to a GP practice pharmacy `Organization` resource."""
-    
     identifier: UpdatePatientPartial200ApplicationFhirPlusJSONExtension2ValueReferenceIdentifier = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('identifier') }})
     r"""Wrapper object for the patient's dispensing doctor organisation code."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension2:
     r"""Wrapper object for the patient's dispensing doctor. This will only be populated on a retrieval and not a search."""
-    
     url: UpdatePatientPartial200ApplicationFhirPlusJSONExtension2URL = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
     r"""URL of specification of UKCore-DispensingDoctor FHIR extension."""
     value_reference: UpdatePatientPartial200ApplicationFhirPlusJSONExtension2ValueReference = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('valueReference') }})
     r"""Reference to a GP practice pharmacy `Organization` resource."""
     
+
+
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension1URL(str, Enum):
     r"""URL of specification of UKCore-NominatedPharmacy FHIR extension."""
     HTTPS_FHIR_HL7_ORG_UK_STRUCTURE_DEFINITION_EXTENSION_UK_CORE_NOMINATED_PHARMACY = 'https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-NominatedPharmacy'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension1ValueReferenceIdentifier:
     r"""Wrapper object for the patient's nominated pharmacy organisation code."""
-    
     value: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value') }})
     r"""Organisation code for the nominated pharmacy, as held in the [Organisation Data Service](https://developer.nhs.uk/apis/ods/)."""
     system: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('system'), 'exclude': lambda f: f is None }})
     r"""URL for the FHIR code system for the ODS organisation code."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension1ValueReference:
     r"""Reference to a pharmacy `Organization` resource."""
-    
     identifier: UpdatePatientPartial200ApplicationFhirPlusJSONExtension1ValueReferenceIdentifier = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('identifier') }})
     r"""Wrapper object for the patient's nominated pharmacy organisation code."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONExtension1:
     r"""Wrapper object for the patient's nominated pharmacy. This will only be populated on a retrieval and not a search."""
-    
     url: UpdatePatientPartial200ApplicationFhirPlusJSONExtension1URL = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
     r"""URL of specification of UKCore-NominatedPharmacy FHIR extension."""
     value_reference: UpdatePatientPartial200ApplicationFhirPlusJSONExtension1ValueReference = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('valueReference') }})
     r"""Reference to a pharmacy `Organization` resource."""
     
+
+
 class UpdatePatientPartial200ApplicationFhirPlusJSONGender(str, Enum):
     r"""Classification of the gender of a patient. The classification is phenotypical rather than genotypical, i.e. it does not provide codes for medical or scientific purposes.
     It is the administrative gender that the patient wishes to be known as. In some cases, this may not be the same as the patient’s registered birth gender, or their current clinical gender.
@@ -1068,21 +1195,23 @@ class UpdatePatientPartial200ApplicationFhirPlusJSONGender(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONGeneralPractitionerIdentifierPeriod:
     r"""Business effective period when name was, is, or will be in use."""
-    
     start: date = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('start'), 'encoder': utils.dateisoformat(False), 'decoder': utils.datefromisoformat, 'mm_field': fields.DateTime(format='iso') }})
     r"""Start date of time period, if known, in format `yyyy-mm-dd`. Can be a future date."""
     end: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'mm_field': fields.DateTime(format='iso'), 'exclude': lambda f: f is None }})
     r"""End date of time period, if known and if not ongoing, in format `yyyy-mm-dd`. Can be a future date."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONGeneralPractitionerIdentifier:
     r"""Identifier and system of identification used for this Organisation."""
-    
     value: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value') }})
     r"""Organisation code for the registered general practice, as held in the [Organisation Data Service](https://developer.nhs.uk/apis/ods/)."""
     period: Optional[UpdatePatientPartial200ApplicationFhirPlusJSONGeneralPractitionerIdentifierPeriod] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('period'), 'exclude': lambda f: f is None }})
@@ -1091,11 +1220,13 @@ class UpdatePatientPartial200ApplicationFhirPlusJSONGeneralPractitionerIdentifie
     r"""URL for the Organisation Data Service - who are responsible for publishing codes that identify organisations and individuals across health and social care."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONGeneralPractitioner:
     r"""General practice (not practitioner) with which the patient is or was registered."""
-    
     identifier: UpdatePatientPartial200ApplicationFhirPlusJSONGeneralPractitionerIdentifier = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('identifier') }})
     r"""Identifier and system of identification used for this Organisation."""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
@@ -1103,15 +1234,17 @@ class UpdatePatientPartial200ApplicationFhirPlusJSONGeneralPractitioner:
     type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     r"""Type of Reference being returned."""
     
+
+
 class UpdatePatientPartial200ApplicationFhirPlusJSONIdentifierExtensionURL(str, Enum):
     r"""URL of the extension definition."""
     HTTPS_FHIR_HL7_ORG_UK_STRUCTURE_DEFINITION_EXTENSION_UK_CORE_NHS_NUMBER_VERIFICATION_STATUS = 'https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-NHSNumberVerificationStatus'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONIdentifierExtensionValueCodeableConceptCoding:
-    
     code: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code') }})
     r"""Symbol in syntax defined by the system."""
     display: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display'), 'exclude': lambda f: f is None }})
@@ -1122,29 +1255,35 @@ class UpdatePatientPartial200ApplicationFhirPlusJSONIdentifierExtensionValueCode
     r"""Version of the coding system in use."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONIdentifierExtensionValueCodeableConcept:
     r"""NHS Number Verification Status Indicator."""
-    
     coding: list[UpdatePatientPartial200ApplicationFhirPlusJSONIdentifierExtensionValueCodeableConceptCoding] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('coding') }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONIdentifierExtension:
     r"""Status indicating if NHS number is present and verified."""
-    
     url: Optional[UpdatePatientPartial200ApplicationFhirPlusJSONIdentifierExtensionURL] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url'), 'exclude': lambda f: f is None }})
     r"""URL of the extension definition."""
     value_codeable_concept: Optional[UpdatePatientPartial200ApplicationFhirPlusJSONIdentifierExtensionValueCodeableConcept] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('valueCodeableConcept'), 'exclude': lambda f: f is None }})
     r"""NHS Number Verification Status Indicator."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONIdentifier:
-    
     value: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value') }})
     r"""The patient's NHS number. The primary identifier of a patient, unique within NHS England and Wales. Always 10 digits and must be a [valid NHS number](https://www.datadictionary.nhs.uk/attributes/nhs_number.html)."""
     extension: Optional[list[UpdatePatientPartial200ApplicationFhirPlusJSONIdentifierExtension]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('extension'), 'exclude': lambda f: f is None }})
@@ -1153,22 +1292,26 @@ class UpdatePatientPartial200ApplicationFhirPlusJSONIdentifier:
     r"""System identifier belongs to."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONManagingOrganizationIdentifierPeriod:
     r"""Business effective period when name was, is, or will be in use."""
-    
     start: date = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('start'), 'encoder': utils.dateisoformat(False), 'decoder': utils.datefromisoformat, 'mm_field': fields.DateTime(format='iso') }})
     r"""Start date of time period, if known, in format `yyyy-mm-dd`. Can be a future date."""
     end: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'mm_field': fields.DateTime(format='iso'), 'exclude': lambda f: f is None }})
     r"""End date of time period, if known and if not ongoing, in format `yyyy-mm-dd`. Can be a future date."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONManagingOrganizationIdentifier:
     r"""Identifier and system of identification used for this Organisation."""
-    
     value: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value') }})
     r"""Organisation code for the registered general practice, as held in the [Organisation Data Service](https://developer.nhs.uk/apis/ods/)."""
     period: Optional[UpdatePatientPartial200ApplicationFhirPlusJSONManagingOrganizationIdentifierPeriod] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('period'), 'exclude': lambda f: f is None }})
@@ -1177,16 +1320,20 @@ class UpdatePatientPartial200ApplicationFhirPlusJSONManagingOrganizationIdentifi
     r"""URL for the Organisation Data Service - who are responsible for publishing codes that identify organisations and individuals across health and social care."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONManagingOrganization:
     r"""The managing organization of a de-registered patient. This will not be returned when the reason for de-registration is death."""
-    
     identifier: UpdatePatientPartial200ApplicationFhirPlusJSONManagingOrganizationIdentifier = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('identifier') }})
     r"""Identifier and system of identification used for this Organisation."""
     type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     r"""Type of Reference being returned."""
     
+
+
 class UpdatePatientPartial200ApplicationFhirPlusJSONMetaSecurityCode(str, Enum):
     r"""Code defined by the system value set."""
     U = 'U'
@@ -1203,9 +1350,9 @@ class UpdatePatientPartial200ApplicationFhirPlusJSONMetaSecurityDisplay(str, Enu
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONMetaSecurity:
-    
     code: Optional[UpdatePatientPartial200ApplicationFhirPlusJSONMetaSecurityCode] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code'), 'exclude': lambda f: f is None }})
     r"""Code defined by the system value set."""
     display: Optional[UpdatePatientPartial200ApplicationFhirPlusJSONMetaSecurityDisplay] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display'), 'exclude': lambda f: f is None }})
@@ -1214,11 +1361,13 @@ class UpdatePatientPartial200ApplicationFhirPlusJSONMetaSecurity:
     r"""URI of the value set specification."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONMeta:
     r"""Metadata about this resource."""
-    
     security: Optional[list[UpdatePatientPartial200ApplicationFhirPlusJSONMetaSecurity]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('security'), 'exclude': lambda f: f is None }})
     r"""The level of security on the patients record, which affects which fields are populated on retrieval. The possible responses are:
     * U - unrestricted. All available data is returned.
@@ -1230,16 +1379,20 @@ class UpdatePatientPartial200ApplicationFhirPlusJSONMeta:
     r"""The NHS Digital assigned version of the patient resource."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONNamePeriod:
     r"""Business effective period when name was, is, or will be in use."""
-    
     start: date = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('start'), 'encoder': utils.dateisoformat(False), 'decoder': utils.datefromisoformat, 'mm_field': fields.DateTime(format='iso') }})
     r"""Start date of time period, if known, in format `yyyy-mm-dd`. Can be a future date."""
     end: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'mm_field': fields.DateTime(format='iso'), 'exclude': lambda f: f is None }})
     r"""End date of time period, if known and if not ongoing, in format `yyyy-mm-dd`. Can be a future date."""
     
+
+
 class UpdatePatientPartial200ApplicationFhirPlusJSONNameUse(str, Enum):
     r"""How this name should be used.
     * usual - Known as, conventional or the one patient normally uses. A patient always has a usual name.
@@ -1260,9 +1413,9 @@ class UpdatePatientPartial200ApplicationFhirPlusJSONNameUse(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONName:
-    
     family: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('family') }})
     r"""Family name (often called Surname)."""
     use: UpdatePatientPartial200ApplicationFhirPlusJSONNameUse = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('use') }})
@@ -1292,16 +1445,18 @@ class UpdatePatientPartial200ApplicationFhirPlusJSONName:
     suffix: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('suffix'), 'exclude': lambda f: f is None }})
     r"""Name suffices and postnominals."""
     
+
+
 class UpdatePatientPartial200ApplicationFhirPlusJSONTelecomExtensionURL(str, Enum):
     r"""Definition of other contact system extension."""
     HTTPS_FHIR_HL7_ORG_UK_STRUCTURE_DEFINITION_EXTENSION_UK_CORE_OTHER_CONTACT_SYSTEM = 'https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-OtherContactSystem'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONTelecomExtensionValueCoding:
     r"""URL of specification of other contact systems."""
-    
     code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code'), 'exclude': lambda f: f is None }})
     r"""Coded value for the other contact system in place."""
     display: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display'), 'exclude': lambda f: f is None }})
@@ -1310,27 +1465,33 @@ class UpdatePatientPartial200ApplicationFhirPlusJSONTelecomExtensionValueCoding:
     r"""URL of Code System that describes available contact relationships."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONTelecomExtension:
     r"""Wrapped object for other contact system details."""
-    
     url: Optional[UpdatePatientPartial200ApplicationFhirPlusJSONTelecomExtensionURL] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url'), 'exclude': lambda f: f is None }})
     r"""Definition of other contact system extension."""
     value_coding: Optional[UpdatePatientPartial200ApplicationFhirPlusJSONTelecomExtensionValueCoding] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('valueCoding'), 'exclude': lambda f: f is None }})
     r"""URL of specification of other contact systems."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONTelecomPeriod:
     r"""Business effective period when name was, is, or will be in use."""
-    
     start: date = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('start'), 'encoder': utils.dateisoformat(False), 'decoder': utils.datefromisoformat, 'mm_field': fields.DateTime(format='iso') }})
     r"""Start date of time period, if known, in format `yyyy-mm-dd`. Can be a future date."""
     end: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'mm_field': fields.DateTime(format='iso'), 'exclude': lambda f: f is None }})
     r"""End date of time period, if known and if not ongoing, in format `yyyy-mm-dd`. Can be a future date."""
     
+
+
 class UpdatePatientPartial200ApplicationFhirPlusJSONTelecomSystem(str, Enum):
     r"""Means of communication, such as phone or email."""
     PHONE = 'phone'
@@ -1347,10 +1508,10 @@ class UpdatePatientPartial200ApplicationFhirPlusJSONTelecomUse(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSONTelecom:
     r"""A contact point, such as a phone number or email address"""
-    
     system: UpdatePatientPartial200ApplicationFhirPlusJSONTelecomSystem = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('system') }})
     r"""Means of communication, such as phone or email."""
     value: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value') }})
@@ -1368,11 +1529,13 @@ class UpdatePatientPartial200ApplicationFhirPlusJSONTelecom:
     r"""Location associated with communication system."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdatePatientPartial200ApplicationFhirPlusJSON:
     r"""Patient updated."""
-    
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""The patient's NHS number. The primary identifier of a patient, unique within NHS England and Wales. Always 10 digits and must be a [valid NHS number](https://www.datadictionary.nhs.uk/attributes/nhs_number.html)."""
     address: Optional[list[UpdatePatientPartial200ApplicationFhirPlusJSONAddress]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('address'), 'exclude': lambda f: f is None }})
@@ -1438,9 +1601,11 @@ class UpdatePatientPartial200ApplicationFhirPlusJSON:
     """
     
 
+
+
+
 @dataclasses.dataclass
 class UpdatePatientPartialResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
@@ -1479,3 +1644,4 @@ class UpdatePatientPartialResponse:
     Re-send the request after the time specified in the `Retry-After` header using the same `X-Request-ID` value.
     """
     
+

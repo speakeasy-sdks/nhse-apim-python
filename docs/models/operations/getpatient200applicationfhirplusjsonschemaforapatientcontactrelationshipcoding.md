@@ -1,0 +1,10 @@
+# GetPatient200ApplicationFhirPlusJSONSchemaForAPatientContactRelationshipCoding
+
+
+## Fields
+
+| Field                                                              | Type                                                               | Required                                                           | Description                                                        | Example                                                            |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| `code`                                                             | *str*                                                              | :heavy_check_mark:                                                 | Coded value for contact relationship.                              | C                                                                  |
+| `display`                                                          | *Optional[str]*                                                    | :heavy_minus_sign:                                                 | Display-friendly representation of the contact relationship code.  | Emergency Contact                                                  |
+| `system`                                                           | *Optional[str]*                                                    | :heavy_minus_sign:                                                 | URL of Code System that describes available contact relationships. |                                                                    |

@@ -11,9 +11,9 @@ from pds_fhir import utils
 from typing import Any, Optional
 
 
+
 @dataclasses.dataclass
 class GetRelatedPeopleRequest:
-    
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     r"""The patient's NHS number. The primary identifier of a patient, unique within NHS England and Wales. Always 10 digits and must be a [valid NHS number](https://www.datadictionary.nhs.uk/attributes/nhs_number.html)."""
     nhsd_end_user_organisation_ods: Optional[str] = dataclasses.field(default=None, metadata={'header': { 'field_name': 'NHSD-End-User-Organisation-ODS', 'style': 'simple', 'explode': False }})
@@ -42,6 +42,8 @@ class GetRelatedPeopleRequest:
     If you re-send a failed request, use the same value in this header.
     """
     
+
+
 class GetRelatedPeople4XXApplicationFhirPlusJSONIssueCode(str, Enum):
     r"""FHIR error code."""
     INVALID = 'invalid'
@@ -78,9 +80,9 @@ class GetRelatedPeople4XXApplicationFhirPlusJSONIssueCode(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetRelatedPeople4XXApplicationFhirPlusJSONIssueDetailsCoding:
-    
     code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code'), 'exclude': lambda f: f is None }})
     r"""Symbol in syntax defined by the system."""
     display: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display'), 'exclude': lambda f: f is None }})
@@ -91,13 +93,17 @@ class GetRelatedPeople4XXApplicationFhirPlusJSONIssueDetailsCoding:
     r"""Version of the coding system in use."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetRelatedPeople4XXApplicationFhirPlusJSONIssueDetails:
     r"""Internal error code."""
-    
     coding: Optional[list[GetRelatedPeople4XXApplicationFhirPlusJSONIssueDetailsCoding]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('coding'), 'exclude': lambda f: f is None }})
     
+
+
 class GetRelatedPeople4XXApplicationFhirPlusJSONIssueSeverity(str, Enum):
     r"""Severity of the error."""
     FATAL = 'fatal'
@@ -107,9 +113,9 @@ class GetRelatedPeople4XXApplicationFhirPlusJSONIssueSeverity(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetRelatedPeople4XXApplicationFhirPlusJSONIssue:
-    
     code: GetRelatedPeople4XXApplicationFhirPlusJSONIssueCode = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code') }})
     r"""FHIR error code."""
     severity: GetRelatedPeople4XXApplicationFhirPlusJSONIssueSeverity = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('severity') }})
@@ -122,77 +128,91 @@ class GetRelatedPeople4XXApplicationFhirPlusJSONIssue:
     r"""FHIRPath of element(s) related to the error."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetRelatedPeople4XXApplicationFhirPlusJSON:
     r"""Outcome of an operation that does not result in a resource or bundle being returned, for example an error or an async/batch submission.
     There are a number of possible error codes that can be returned along with a more detailed description in the `display` field.
     """
-    
     issue: Optional[list[GetRelatedPeople4XXApplicationFhirPlusJSONIssue]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('issue'), 'exclude': lambda f: f is None }})
     r"""List of issues that have occurred."""
     resource_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('resourceType'), 'exclude': lambda f: f is None }})
     r"""FHIR Resource Type."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceAddressExtensionExtension2:
     r"""Value of the address key."""
-    
     url: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
     r"""Always 'value'."""
     value_string: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('valueString') }})
     r"""Address key in PAF format. An 8 digit number including leading zeroes, formatted as a string."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceAddressExtensionExtension1ValueCoding:
     r"""URL of specification of address key format."""
-    
     code: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code') }})
     r"""Address Key system. Always 'PAF'."""
     system: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('system') }})
     r"""URL of Code System that describes available Address Key formats."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceAddressExtensionExtension1:
     r"""Coding system of the address key."""
-    
     url: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
     r"""Always 'type'."""
     value_coding: GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceAddressExtensionExtension1ValueCoding = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('valueCoding') }})
     r"""URL of specification of address key format."""
     
+
+
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceAddressExtensionURL(str, Enum):
     r"""URL of specification of the AddressKey extension."""
     HTTPS_FHIR_HL7_ORG_UK_STRUCTURE_DEFINITION_EXTENSION_UK_CORE_ADDRESS_KEY = 'https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AddressKey'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceAddressExtension:
     r"""Unique identifier for an address."""
-    
     extension: Optional[list[Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('extension'), 'exclude': lambda f: f is None }})
     r"""Specification of address key system and address key value. Contains exactly two items: one describing the code system the Address Key uses, and the other specifying the value of the Address Key."""
     url: Optional[GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceAddressExtensionURL] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url'), 'exclude': lambda f: f is None }})
     r"""URL of specification of the AddressKey extension."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceAddressPeriod:
     r"""Business effective period when name was, is, or will be in use."""
-    
     start: date = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('start'), 'encoder': utils.dateisoformat(False), 'decoder': utils.datefromisoformat, 'mm_field': fields.DateTime(format='iso') }})
     r"""Start date of time period, if known, in format `yyyy-mm-dd`. Can be a future date."""
     end: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'mm_field': fields.DateTime(format='iso'), 'exclude': lambda f: f is None }})
     r"""End date of time period, if known and if not ongoing, in format `yyyy-mm-dd`. Can be a future date."""
     
+
+
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceAddressText(str, Enum):
     r"""Where a `temp` address is provided a descriptor text must be sent.
     The list of possible values are:
@@ -239,10 +259,10 @@ class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceAddressUse(str, Enu
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceAddress:
     r"""An address associated with the patient."""
-    
     use: GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceAddressUse = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('use') }})
     r"""Purpose of this address:
       * `home` - the home address is the patient's normal residence. Home address is also known as usual, main, registered, current or permanent address
@@ -295,30 +315,34 @@ class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceAddress:
     A patient can also register temporarily at a GP practice using a temporary address. Temporary GP registration information does not appear on the PDS, but the address used for it may.
     """
     
+
+
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceExtension4Extension2URL(str, Enum):
     r"""Key of this object. Always `interpreterRequired`."""
     INTERPRETER_REQUIRED = 'interpreterRequired'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceExtension4Extension2:
     r"""Wrapper object for whether an interpreter is required."""
-    
     url: GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceExtension4Extension2URL = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
     r"""Key of this object. Always `interpreterRequired`."""
     value_boolean: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('valueBoolean') }})
     r"""Whether an interpreter is required."""
     
+
+
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceExtension4Extension1URL(str, Enum):
     r"""Key of this object. Always `language`."""
     LANGUAGE = 'language'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceExtension4Extension1ValueCodeableConceptCoding:
-    
     code: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code') }})
     r"""Language code based on [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard plus extensions for braille, makaton and sign languages, which are:
     * `q1` - Braille
@@ -336,55 +360,65 @@ class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceExtension4Extension
     r"""Version of the language code system."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceExtension4Extension1ValueCodeableConcept:
     r"""Human language."""
-    
     coding: list[GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceExtension4Extension1ValueCodeableConceptCoding] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('coding') }})
     r"""Exactly one language code."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceExtension4Extension1:
     r"""Wrapper object for communication language."""
-    
     url: GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceExtension4Extension1URL = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
     r"""Key of this object. Always `language`."""
     value_codeable_concept: GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceExtension4Extension1ValueCodeableConcept = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('valueCodeableConcept') }})
     r"""Human language."""
     
+
+
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceExtension4URL(str, Enum):
     r"""Definition of communication extension."""
     HTTPS_FHIR_HL7_ORG_UK_STRUCTURE_DEFINITION_EXTENSION_UK_CORE_NHS_COMMUNICATION = 'https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-NHSCommunication'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceExtension4:
     r"""Wrapper object for communication details. This will only be populated on a retrieval and not a search."""
-    
     extension: list[Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('extension') }})
     r"""Definition of communication extension, The array must have two items, a valueCodeableConcept for the language and a valueBoolean for if an interpreter is required."""
     url: GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceExtension4URL = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
     r"""Definition of communication extension."""
     
+
+
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceExtension3Extension3URL(str, Enum):
     r"""Key of this object. Always `PreferredContactTimes`."""
     PREFERRED_CONTACT_TIMES = 'PreferredContactTimes'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceExtension3Extension3:
     r"""Wrapper object for preferred contact times."""
-    
     url: GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceExtension3Extension3URL = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
     r"""Key of this object. Always `PreferredContactTimes`."""
     value_string: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('valueString') }})
     r"""A free-text description about the preferred contact times."""
     
+
+
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceExtension3Extension2URL(str, Enum):
     r"""Key of this object. Always `PreferredContactMethod`."""
     PREFERRED_CONTACT_METHOD = 'PreferredContactMethod'
@@ -395,9 +429,9 @@ class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceExtension3Extension
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceExtension3Extension2ValueCodeableConceptCoding:
-    
     code: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code') }})
     r"""A code to identify to identify the preferred contact method of a patient, contact or related person.
     * 1	- Letter
@@ -415,33 +449,39 @@ class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceExtension3Extension
     r"""Definition of the preferred contact method extension."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceExtension3Extension2ValueCodeableConcept:
     r"""Preferred Contact Method."""
-    
     coding: list[GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceExtension3Extension2ValueCodeableConceptCoding] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('coding') }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceExtension3Extension2:
     r"""Wrapper object for preferred contact method."""
-    
     url: GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceExtension3Extension2URL = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
     r"""Key of this object. Always `PreferredContactMethod`."""
     value_codeable_concept: GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceExtension3Extension2ValueCodeableConcept = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('valueCodeableConcept') }})
     r"""Preferred Contact Method."""
     
+
+
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceExtension3Extension1ValueCodeableConceptCodingSystem(str, Enum):
     r"""Definition of the preferred written communication extension."""
     HTTPS_FHIR_HL7_ORG_UK_CODE_SYSTEM_UK_CORE_PREFERRED_WRITTEN_COMMUNICATION_FORMAT = 'https://fhir.hl7.org.uk/CodeSystem/UKCore-PreferredWrittenCommunicationFormat'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceExtension3Extension1ValueCodeableConceptCoding:
-    
     code: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code') }})
     r"""A code to identify the preferred written communication format of a patient, contact or related person.
     * 11 - Large print
@@ -454,80 +494,94 @@ class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceExtension3Extension
     r"""Definition of the preferred written communication extension."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceExtension3Extension1ValueCodeableConcept:
     r"""Preferred Written Communication Format."""
-    
     coding: list[GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceExtension3Extension1ValueCodeableConceptCoding] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('coding') }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceExtension3Extension1:
     r"""Wrapper object for preferred written communication format."""
-    
     url: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
     r"""Key of this object. Always `PreferredWrittenCommunicationFormat`."""
     value_codeable_concept: GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceExtension3Extension1ValueCodeableConcept = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('valueCodeableConcept') }})
     r"""Preferred Written Communication Format."""
     
+
+
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceExtension3URL(str, Enum):
     r"""Definition of the contact preference extension."""
     HTTPS_FHIR_HL7_ORG_UK_STRUCTURE_DEFINITION_EXTENSION_UK_CORE_CONTACT_PREFERENCE = 'https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-ContactPreference'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceExtension3:
     r"""Wrapper object for preferred contact details; the written communication format, preferred contact time and method. This will only be populated on a retrieval and not a search."""
-    
     extension: list[Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('extension') }})
     r"""Wrapper array containing zero or one preferred contact method, zero or one preferred written communication format; and zero or one preferred contact time."""
     url: GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceExtension3URL = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
     r"""Definition of the contact preference extension."""
     
+
+
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceExtension2URL(str, Enum):
     r"""URL to FHIR Extension Specification."""
     HTTPS_FHIR_NHS_UK_R4_STRUCTURE_DEFINITION_EXTENSION_UK_CORE_CONTACT_RANK = 'https://fhir.nhs.uk/R4/StructureDefinition/Extension-UKCore-ContactRank'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceExtension2:
     r"""Rank indicating order in which contacts should be tried."""
-    
     url: Optional[GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceExtension2URL] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url'), 'exclude': lambda f: f is None }})
     r"""URL to FHIR Extension Specification."""
     value_positive_int: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('valuePositiveInt'), 'exclude': lambda f: f is None }})
     r"""Rank expressed as positive integer (1 being the highest)."""
     
+
+
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceExtension1URL(str, Enum):
     r"""URL to FHIR Extension Specification."""
     HTTPS_FHIR_NHS_UK_R4_STRUCTURE_DEFINITION_EXTENSION_UK_CORE_COPY_CORRESPONDENCE_INDICATOR = 'https://fhir.nhs.uk/R4/StructureDefinition/Extension-UKCore-CopyCorrespondenceIndicator'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceExtension1:
     r"""Flag indicating if this person should be copied in on any contact with the Patient. This will only be returned if the value is true and the person should be copied in on correspondence, otherwise it will be omitted."""
-    
     url: Optional[GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceExtension1URL] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url'), 'exclude': lambda f: f is None }})
     r"""URL to FHIR Extension Specification."""
     value_boolean: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('valueBoolean'), 'exclude': lambda f: f is None }})
     r"""Flag indicating if this person should be copied in on correspondence. This will only be returned if the value is `true` otherwise it will not be returned and can be assumed `false`"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceNamePeriod:
     r"""Business effective period when name was, is, or will be in use."""
-    
     start: date = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('start'), 'encoder': utils.dateisoformat(False), 'decoder': utils.datefromisoformat, 'mm_field': fields.DateTime(format='iso') }})
     r"""Start date of time period, if known, in format `yyyy-mm-dd`. Can be a future date."""
     end: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'mm_field': fields.DateTime(format='iso'), 'exclude': lambda f: f is None }})
     r"""End date of time period, if known and if not ongoing, in format `yyyy-mm-dd`. Can be a future date."""
     
+
+
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceNameUse(str, Enum):
     r"""How this name should be used.
     * usual - Known as, conventional or the one patient normally uses. A patient always has a usual name.
@@ -548,9 +602,9 @@ class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceNameUse(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceName:
-    
     family: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('family') }})
     r"""Family name (often called Surname)."""
     use: GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceNameUse = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('use') }})
@@ -581,27 +635,31 @@ class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceName:
     r"""Name suffices and postnominals."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourcePatientIdentifier:
     r"""Identifier and system of identification used for this Patient.
     
     This is an optional field as related person details are either a reference to another NHS number, or the details, such as name and adress, stored directly on the resource.
     """
-    
     system: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('system'), 'exclude': lambda f: f is None }})
     r"""URL for the Patient retrieval API."""
     value: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value'), 'exclude': lambda f: f is None }})
     r"""NHS number for the related person"""
     
+
+
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourcePatientType(str, Enum):
     PATIENT = 'Patient'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourcePatient:
-    
     type: GetRelatedPeople200ApplicationFhirPlusJSONEntryResourcePatientType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     identifier: Optional[GetRelatedPeople200ApplicationFhirPlusJSONEntryResourcePatientIdentifier] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('identifier'), 'exclude': lambda f: f is None }})
     r"""Identifier and system of identification used for this Patient.
@@ -612,16 +670,20 @@ class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourcePatient:
     r"""URL for the FHIR Patient resource."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourcePeriod:
     r"""Business effective period when name was, is, or will be in use."""
-    
     start: date = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('start'), 'encoder': utils.dateisoformat(False), 'decoder': utils.datefromisoformat, 'mm_field': fields.DateTime(format='iso') }})
     r"""Start date of time period, if known, in format `yyyy-mm-dd`. Can be a future date."""
     end: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'mm_field': fields.DateTime(format='iso'), 'exclude': lambda f: f is None }})
     r"""End date of time period, if known and if not ongoing, in format `yyyy-mm-dd`. Can be a future date."""
     
+
+
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceRelationshipCodingSystem(str, Enum):
     r"""URI of the coding system specification."""
     HTTP_HL7_ORG_FHIR_VALUE_SET_RELATEDPERSON_RELATIONSHIPTYPE = 'http://hl7.org/fhir/ValueSet/relatedperson-relationshiptype'
@@ -629,9 +691,9 @@ class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceRelationshipCodingS
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceRelationshipCoding:
-    
     code: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code') }})
     r"""Symbol in syntax defined by the system."""
     system: GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceRelationshipCodingSystem = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('system') }})
@@ -640,10 +702,12 @@ class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceRelationshipCoding:
     r"""Human-friendly display representation defined by the system."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceRelationship:
-    
     coding: list[GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceRelationshipCoding] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('coding') }})
     r"""Coded values for three relationship types:
     * Role
@@ -692,16 +756,18 @@ class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceRelationship:
     `Next-of-Kin` is optional and will be absent from the response when the related person is not the Next-of-Kin.
     """
     
+
+
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceTelecomExtensionURL(str, Enum):
     r"""Definition of other contact system extension."""
     HTTPS_FHIR_HL7_ORG_UK_STRUCTURE_DEFINITION_EXTENSION_UK_CORE_OTHER_CONTACT_SYSTEM = 'https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-OtherContactSystem'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceTelecomExtensionValueCoding:
     r"""URL of specification of other contact systems."""
-    
     code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code'), 'exclude': lambda f: f is None }})
     r"""Coded value for the other contact system in place."""
     display: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display'), 'exclude': lambda f: f is None }})
@@ -710,27 +776,33 @@ class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceTelecomExtensionVal
     r"""URL of Code System that describes available contact relationships."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceTelecomExtension:
     r"""Wrapped object for other contact system details."""
-    
     url: Optional[GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceTelecomExtensionURL] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url'), 'exclude': lambda f: f is None }})
     r"""Definition of other contact system extension."""
     value_coding: Optional[GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceTelecomExtensionValueCoding] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('valueCoding'), 'exclude': lambda f: f is None }})
     r"""URL of specification of other contact systems."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceTelecomPeriod:
     r"""Business effective period when name was, is, or will be in use."""
-    
     start: date = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('start'), 'encoder': utils.dateisoformat(False), 'decoder': utils.datefromisoformat, 'mm_field': fields.DateTime(format='iso') }})
     r"""Start date of time period, if known, in format `yyyy-mm-dd`. Can be a future date."""
     end: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'mm_field': fields.DateTime(format='iso'), 'exclude': lambda f: f is None }})
     r"""End date of time period, if known and if not ongoing, in format `yyyy-mm-dd`. Can be a future date."""
     
+
+
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceTelecomSystem(str, Enum):
     r"""Means of communication, such as phone or email."""
     PHONE = 'phone'
@@ -747,10 +819,10 @@ class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceTelecomUse(str, Enu
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceTelecom:
     r"""A contact point, such as a phone number or email address"""
-    
     system: GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceTelecomSystem = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('system') }})
     r"""Means of communication, such as phone or email."""
     value: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value') }})
@@ -768,10 +840,12 @@ class GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceTelecom:
     r"""Location associated with communication system."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetRelatedPeople200ApplicationFhirPlusJSONEntryResource:
-    
     patient: GetRelatedPeople200ApplicationFhirPlusJSONEntryResourcePatient = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('patient') }})
     relationship: list[GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceRelationship] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('relationship') }})
     r"""The relationship of the related person to the patient."""
@@ -800,20 +874,24 @@ class GetRelatedPeople200ApplicationFhirPlusJSONEntryResource:
     """
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetRelatedPeople200ApplicationFhirPlusJSONEntry:
-    
     full_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fullUrl'), 'exclude': lambda f: f is None }})
     r"""Absolute URL of the resource described in this item."""
     resource: Optional[GetRelatedPeople200ApplicationFhirPlusJSONEntryResource] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('resource'), 'exclude': lambda f: f is None }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetRelatedPeople200ApplicationFhirPlusJSON:
     r"""Information successfully returned."""
-    
     entry: Optional[list[GetRelatedPeople200ApplicationFhirPlusJSONEntry]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entry'), 'exclude': lambda f: f is None }})
     r"""A list of related people details attached to the patient."""
     resource_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('resourceType'), 'exclude': lambda f: f is None }})
@@ -826,9 +904,11 @@ class GetRelatedPeople200ApplicationFhirPlusJSON:
     r"""FHIR Bundle Type."""
     
 
+
+
+
 @dataclasses.dataclass
 class GetRelatedPeopleResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     get_related_people_200_application_fhir_plus_json_object: Optional[GetRelatedPeople200ApplicationFhirPlusJSON] = dataclasses.field(default=None)
@@ -850,3 +930,4 @@ class GetRelatedPeopleResponse:
     headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

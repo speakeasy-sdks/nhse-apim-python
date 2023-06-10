@@ -19,9 +19,9 @@ class SearchPatientGender(str, Enum):
     UNKNOWN = 'unknown'
 
 
+
 @dataclasses.dataclass
 class SearchPatientRequest:
-    
     exact_match: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': '_exact-match', 'style': 'form', 'explode': True }})
     r"""The search only returns results where the `score` field is 1.0. Use this with care - it is unlikely to work with fuzzy search or wildcards."""
     fuzzy_match: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': '_fuzzy-match', 'style': 'form', 'explode': True }})
@@ -111,6 +111,8 @@ class SearchPatientRequest:
     If you re-send a failed request, use the same value in this header.
     """
     
+
+
 class SearchPatient4XXApplicationFhirPlusJSONIssueCode(str, Enum):
     r"""FHIR error code."""
     INVALID = 'invalid'
@@ -147,9 +149,9 @@ class SearchPatient4XXApplicationFhirPlusJSONIssueCode(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchPatient4XXApplicationFhirPlusJSONIssueDetailsCoding:
-    
     code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code'), 'exclude': lambda f: f is None }})
     r"""Symbol in syntax defined by the system."""
     display: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display'), 'exclude': lambda f: f is None }})
@@ -160,13 +162,17 @@ class SearchPatient4XXApplicationFhirPlusJSONIssueDetailsCoding:
     r"""Version of the coding system in use."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchPatient4XXApplicationFhirPlusJSONIssueDetails:
     r"""Internal error code."""
-    
     coding: Optional[list[SearchPatient4XXApplicationFhirPlusJSONIssueDetailsCoding]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('coding'), 'exclude': lambda f: f is None }})
     
+
+
 class SearchPatient4XXApplicationFhirPlusJSONIssueSeverity(str, Enum):
     r"""Severity of the error."""
     FATAL = 'fatal'
@@ -176,9 +182,9 @@ class SearchPatient4XXApplicationFhirPlusJSONIssueSeverity(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchPatient4XXApplicationFhirPlusJSONIssue:
-    
     code: SearchPatient4XXApplicationFhirPlusJSONIssueCode = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code') }})
     r"""FHIR error code."""
     severity: SearchPatient4XXApplicationFhirPlusJSONIssueSeverity = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('severity') }})
@@ -191,77 +197,91 @@ class SearchPatient4XXApplicationFhirPlusJSONIssue:
     r"""FHIRPath of element(s) related to the error."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchPatient4XXApplicationFhirPlusJSON:
     r"""Outcome of an operation that does not result in a resource or bundle being returned, for example an error or an async/batch submission.
     There are a number of possible error codes that can be returned along with a more detailed description in the `display` field.
     """
-    
     issue: Optional[list[SearchPatient4XXApplicationFhirPlusJSONIssue]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('issue'), 'exclude': lambda f: f is None }})
     r"""List of issues that have occurred."""
     resource_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('resourceType'), 'exclude': lambda f: f is None }})
     r"""FHIR Resource Type."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceAddressExtensionExtension2:
     r"""Value of the address key."""
-    
     url: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
     r"""Always 'value'."""
     value_string: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('valueString') }})
     r"""Address key in PAF format. An 8 digit number including leading zeroes, formatted as a string."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceAddressExtensionExtension1ValueCoding:
     r"""URL of specification of address key format."""
-    
     code: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code') }})
     r"""Address Key system. Always 'PAF'."""
     system: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('system') }})
     r"""URL of Code System that describes available Address Key formats."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceAddressExtensionExtension1:
     r"""Coding system of the address key."""
-    
     url: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
     r"""Always 'type'."""
     value_coding: SearchPatient200ApplicationFhirPlusJSONEntryResourceAddressExtensionExtension1ValueCoding = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('valueCoding') }})
     r"""URL of specification of address key format."""
     
+
+
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceAddressExtensionURL(str, Enum):
     r"""URL of specification of the AddressKey extension."""
     HTTPS_FHIR_HL7_ORG_UK_STRUCTURE_DEFINITION_EXTENSION_UK_CORE_ADDRESS_KEY = 'https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AddressKey'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceAddressExtension:
     r"""Unique identifier for an address."""
-    
     extension: Optional[list[Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('extension'), 'exclude': lambda f: f is None }})
     r"""Specification of address key system and address key value. Contains exactly two items: one describing the code system the Address Key uses, and the other specifying the value of the Address Key."""
     url: Optional[SearchPatient200ApplicationFhirPlusJSONEntryResourceAddressExtensionURL] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url'), 'exclude': lambda f: f is None }})
     r"""URL of specification of the AddressKey extension."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceAddressPeriod:
     r"""Business effective period when name was, is, or will be in use."""
-    
     start: date = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('start'), 'encoder': utils.dateisoformat(False), 'decoder': utils.datefromisoformat, 'mm_field': fields.DateTime(format='iso') }})
     r"""Start date of time period, if known, in format `yyyy-mm-dd`. Can be a future date."""
     end: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'mm_field': fields.DateTime(format='iso'), 'exclude': lambda f: f is None }})
     r"""End date of time period, if known and if not ongoing, in format `yyyy-mm-dd`. Can be a future date."""
     
+
+
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceAddressText(str, Enum):
     r"""Where a `temp` address is provided a descriptor text must be sent.
     The list of possible values are:
@@ -308,10 +328,10 @@ class SearchPatient200ApplicationFhirPlusJSONEntryResourceAddressUse(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceAddress:
     r"""An address associated with the patient."""
-    
     use: SearchPatient200ApplicationFhirPlusJSONEntryResourceAddressUse = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('use') }})
     r"""Purpose of this address:
       * `home` - the home address is the patient's normal residence. Home address is also known as usual, main, registered, current or permanent address
@@ -365,21 +385,25 @@ class SearchPatient200ApplicationFhirPlusJSONEntryResourceAddress:
     """
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceSchemaForAPatientContactPeriod:
     r"""Business effective period when name was, is, or will be in use."""
-    
     start: date = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('start'), 'encoder': utils.dateisoformat(False), 'decoder': utils.datefromisoformat, 'mm_field': fields.DateTime(format='iso') }})
     r"""Start date of time period, if known, in format `yyyy-mm-dd`. Can be a future date."""
     end: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'mm_field': fields.DateTime(format='iso'), 'exclude': lambda f: f is None }})
     r"""End date of time period, if known and if not ongoing, in format `yyyy-mm-dd`. Can be a future date."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceSchemaForAPatientContactRelationshipCoding:
-    
     code: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code') }})
     r"""Coded value for contact relationship."""
     display: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display'), 'exclude': lambda f: f is None }})
@@ -388,23 +412,27 @@ class SearchPatient200ApplicationFhirPlusJSONEntryResourceSchemaForAPatientConta
     r"""URL of Code System that describes available contact relationships."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceSchemaForAPatientContactRelationship:
-    
     coding: list[SearchPatient200ApplicationFhirPlusJSONEntryResourceSchemaForAPatientContactRelationshipCoding] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('coding') }})
     r"""Exactly one contact relationship."""
     
+
+
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceSchemaForAPatientContactTelecomExtensionURL(str, Enum):
     r"""Definition of other contact system extension."""
     HTTPS_FHIR_HL7_ORG_UK_STRUCTURE_DEFINITION_EXTENSION_UK_CORE_OTHER_CONTACT_SYSTEM = 'https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-OtherContactSystem'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceSchemaForAPatientContactTelecomExtensionValueCoding:
     r"""URL of specification of other contact systems."""
-    
     code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code'), 'exclude': lambda f: f is None }})
     r"""Coded value for the other contact system in place."""
     display: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display'), 'exclude': lambda f: f is None }})
@@ -413,27 +441,33 @@ class SearchPatient200ApplicationFhirPlusJSONEntryResourceSchemaForAPatientConta
     r"""URL of Code System that describes available contact relationships."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceSchemaForAPatientContactTelecomExtension:
     r"""Wrapped object for other contact system details."""
-    
     url: Optional[SearchPatient200ApplicationFhirPlusJSONEntryResourceSchemaForAPatientContactTelecomExtensionURL] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url'), 'exclude': lambda f: f is None }})
     r"""Definition of other contact system extension."""
     value_coding: Optional[SearchPatient200ApplicationFhirPlusJSONEntryResourceSchemaForAPatientContactTelecomExtensionValueCoding] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('valueCoding'), 'exclude': lambda f: f is None }})
     r"""URL of specification of other contact systems."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceSchemaForAPatientContactTelecomPeriod:
     r"""Business effective period when name was, is, or will be in use."""
-    
     start: date = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('start'), 'encoder': utils.dateisoformat(False), 'decoder': utils.datefromisoformat, 'mm_field': fields.DateTime(format='iso') }})
     r"""Start date of time period, if known, in format `yyyy-mm-dd`. Can be a future date."""
     end: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'mm_field': fields.DateTime(format='iso'), 'exclude': lambda f: f is None }})
     r"""End date of time period, if known and if not ongoing, in format `yyyy-mm-dd`. Can be a future date."""
     
+
+
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceSchemaForAPatientContactTelecomSystem(str, Enum):
     r"""Means of communication, such as phone or email."""
     PHONE = 'phone'
@@ -450,10 +484,10 @@ class SearchPatient200ApplicationFhirPlusJSONEntryResourceSchemaForAPatientConta
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceSchemaForAPatientContactTelecom:
     r"""A contact point, such as a phone number or email address"""
-    
     system: SearchPatient200ApplicationFhirPlusJSONEntryResourceSchemaForAPatientContactTelecomSystem = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('system') }})
     r"""Means of communication, such as phone or email."""
     value: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value') }})
@@ -471,10 +505,12 @@ class SearchPatient200ApplicationFhirPlusJSONEntryResourceSchemaForAPatientConta
     r"""Location associated with communication system."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceSchemaForAPatientContact:
-    
     relationship: list[SearchPatient200ApplicationFhirPlusJSONEntryResourceSchemaForAPatientContactRelationship] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('relationship') }})
     r"""The contact relationship wrapper object that holds the details of the relationship to the patient.
     
@@ -486,21 +522,25 @@ class SearchPatient200ApplicationFhirPlusJSONEntryResourceSchemaForAPatientConta
     period: Optional[SearchPatient200ApplicationFhirPlusJSONEntryResourceSchemaForAPatientContactPeriod] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('period'), 'exclude': lambda f: f is None }})
     r"""Business effective period when name was, is, or will be in use."""
     
+
+
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceExtension1Extension2URL(str, Enum):
     r"""Key of this object. Always `systemEffectiveDate`."""
     SYSTEM_EFFECTIVE_DATE = 'systemEffectiveDate'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceExtension1Extension2:
     r"""Wrapper object for death notification effective date."""
-    
     url: SearchPatient200ApplicationFhirPlusJSONEntryResourceExtension1Extension2URL = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
     r"""Key of this object. Always `systemEffectiveDate`."""
     value_date_time: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('valueDateTime'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
     r"""Date and time at which death notification status took effect."""
     
+
+
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceExtension1Extension1URL(str, Enum):
     r"""Key of this object. Always `deathNotificationStatus`."""
     DEATH_NOTIFICATION_STATUS = 'deathNotificationStatus'
@@ -526,9 +566,9 @@ class SearchPatient200ApplicationFhirPlusJSONEntryResourceExtension1Extension1Va
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceExtension1Extension1ValueCodeableConceptCoding:
-    
     code: SearchPatient200ApplicationFhirPlusJSONEntryResourceExtension1Extension1ValueCodeableConceptCodingCode = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code') }})
     r"""Symbol, in syntax, defined by the system:
     * `1` - Informal - death notice received via an update from a local NHS Organisation such as GP or Trust
@@ -546,39 +586,47 @@ class SearchPatient200ApplicationFhirPlusJSONEntryResourceExtension1Extension1Va
     r"""Version of the coding system in use."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceExtension1Extension1ValueCodeableConcept:
     r"""Death Notification Status."""
-    
     coding: Optional[list[SearchPatient200ApplicationFhirPlusJSONEntryResourceExtension1Extension1ValueCodeableConceptCoding]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('coding'), 'exclude': lambda f: f is None }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceExtension1Extension1:
     r"""Wrapper object for death notification status code."""
-    
     url: SearchPatient200ApplicationFhirPlusJSONEntryResourceExtension1Extension1URL = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
     r"""Key of this object. Always `deathNotificationStatus`."""
     value_codeable_concept: SearchPatient200ApplicationFhirPlusJSONEntryResourceExtension1Extension1ValueCodeableConcept = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('valueCodeableConcept') }})
     r"""Death Notification Status."""
     
+
+
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceExtension1URL(str, Enum):
     r"""Definition of death notification extension."""
     HTTPS_FHIR_HL7_ORG_UK_STRUCTURE_DEFINITION_EXTENSION_UK_CORE_DEATH_NOTIFICATION_STATUS = 'https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-DeathNotificationStatus'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceExtension1:
     r"""Wrapper object for death notification details."""
-    
     extension: list[Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('extension') }})
     r"""Array containing exactly one death notification status code object and exactly one effective date object."""
     url: SearchPatient200ApplicationFhirPlusJSONEntryResourceExtension1URL = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
     r"""Definition of death notification extension."""
     
+
+
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceGender(str, Enum):
     r"""Classification of the gender of a patient. The classification is phenotypical rather than genotypical, i.e. it does not provide codes for medical or scientific purposes.
     It is the administrative gender that the patient wishes to be known as. In some cases, this may not be the same as the patient’s registered birth gender, or their current clinical gender.
@@ -590,21 +638,23 @@ class SearchPatient200ApplicationFhirPlusJSONEntryResourceGender(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceGeneralPractitionerIdentifierPeriod:
     r"""Business effective period when name was, is, or will be in use."""
-    
     start: date = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('start'), 'encoder': utils.dateisoformat(False), 'decoder': utils.datefromisoformat, 'mm_field': fields.DateTime(format='iso') }})
     r"""Start date of time period, if known, in format `yyyy-mm-dd`. Can be a future date."""
     end: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'mm_field': fields.DateTime(format='iso'), 'exclude': lambda f: f is None }})
     r"""End date of time period, if known and if not ongoing, in format `yyyy-mm-dd`. Can be a future date."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceGeneralPractitionerIdentifier:
     r"""Identifier and system of identification used for this Organisation."""
-    
     value: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value') }})
     r"""Organisation code for the registered general practice, as held in the [Organisation Data Service](https://developer.nhs.uk/apis/ods/)."""
     period: Optional[SearchPatient200ApplicationFhirPlusJSONEntryResourceGeneralPractitionerIdentifierPeriod] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('period'), 'exclude': lambda f: f is None }})
@@ -613,11 +663,13 @@ class SearchPatient200ApplicationFhirPlusJSONEntryResourceGeneralPractitionerIde
     r"""URL for the Organisation Data Service - who are responsible for publishing codes that identify organisations and individuals across health and social care."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceGeneralPractitioner:
     r"""General practice (not practitioner) with which the patient is or was registered."""
-    
     identifier: SearchPatient200ApplicationFhirPlusJSONEntryResourceGeneralPractitionerIdentifier = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('identifier') }})
     r"""Identifier and system of identification used for this Organisation."""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
@@ -625,15 +677,17 @@ class SearchPatient200ApplicationFhirPlusJSONEntryResourceGeneralPractitioner:
     type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     r"""Type of Reference being returned."""
     
+
+
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceIdentifierExtensionURL(str, Enum):
     r"""URL of the extension definition."""
     HTTPS_FHIR_HL7_ORG_UK_STRUCTURE_DEFINITION_EXTENSION_UK_CORE_NHS_NUMBER_VERIFICATION_STATUS = 'https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-NHSNumberVerificationStatus'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceIdentifierExtensionValueCodeableConceptCoding:
-    
     code: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code') }})
     r"""Symbol in syntax defined by the system."""
     display: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display'), 'exclude': lambda f: f is None }})
@@ -644,29 +698,35 @@ class SearchPatient200ApplicationFhirPlusJSONEntryResourceIdentifierExtensionVal
     r"""Version of the coding system in use."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceIdentifierExtensionValueCodeableConcept:
     r"""NHS Number Verification Status Indicator."""
-    
     coding: list[SearchPatient200ApplicationFhirPlusJSONEntryResourceIdentifierExtensionValueCodeableConceptCoding] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('coding') }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceIdentifierExtension:
     r"""Status indicating if NHS number is present and verified."""
-    
     url: Optional[SearchPatient200ApplicationFhirPlusJSONEntryResourceIdentifierExtensionURL] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url'), 'exclude': lambda f: f is None }})
     r"""URL of the extension definition."""
     value_codeable_concept: Optional[SearchPatient200ApplicationFhirPlusJSONEntryResourceIdentifierExtensionValueCodeableConcept] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('valueCodeableConcept'), 'exclude': lambda f: f is None }})
     r"""NHS Number Verification Status Indicator."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceIdentifier:
-    
     value: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value') }})
     r"""The patient's NHS number. The primary identifier of a patient, unique within NHS England and Wales. Always 10 digits and must be a [valid NHS number](https://www.datadictionary.nhs.uk/attributes/nhs_number.html)."""
     extension: Optional[list[SearchPatient200ApplicationFhirPlusJSONEntryResourceIdentifierExtension]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('extension'), 'exclude': lambda f: f is None }})
@@ -674,6 +734,8 @@ class SearchPatient200ApplicationFhirPlusJSONEntryResourceIdentifier:
     system: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('system'), 'exclude': lambda f: f is None }})
     r"""System identifier belongs to."""
     
+
+
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceMetaSecurityCode(str, Enum):
     r"""Code defined by the system value set."""
     U = 'U'
@@ -690,9 +752,9 @@ class SearchPatient200ApplicationFhirPlusJSONEntryResourceMetaSecurityDisplay(st
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceMetaSecurity:
-    
     code: Optional[SearchPatient200ApplicationFhirPlusJSONEntryResourceMetaSecurityCode] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code'), 'exclude': lambda f: f is None }})
     r"""Code defined by the system value set."""
     display: Optional[SearchPatient200ApplicationFhirPlusJSONEntryResourceMetaSecurityDisplay] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display'), 'exclude': lambda f: f is None }})
@@ -701,11 +763,13 @@ class SearchPatient200ApplicationFhirPlusJSONEntryResourceMetaSecurity:
     r"""URI of the value set specification."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceMeta:
     r"""Metadata about this resource."""
-    
     security: Optional[list[SearchPatient200ApplicationFhirPlusJSONEntryResourceMetaSecurity]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('security'), 'exclude': lambda f: f is None }})
     r"""The level of security on the patients record, which affects which fields are populated on retrieval. The possible responses are:
     * U - unrestricted. All available data is returned.
@@ -717,16 +781,20 @@ class SearchPatient200ApplicationFhirPlusJSONEntryResourceMeta:
     r"""The NHS Digital assigned version of the patient resource."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceNamePeriod:
     r"""Business effective period when name was, is, or will be in use."""
-    
     start: date = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('start'), 'encoder': utils.dateisoformat(False), 'decoder': utils.datefromisoformat, 'mm_field': fields.DateTime(format='iso') }})
     r"""Start date of time period, if known, in format `yyyy-mm-dd`. Can be a future date."""
     end: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'mm_field': fields.DateTime(format='iso'), 'exclude': lambda f: f is None }})
     r"""End date of time period, if known and if not ongoing, in format `yyyy-mm-dd`. Can be a future date."""
     
+
+
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceNameUse(str, Enum):
     r"""How this name should be used.
     * usual - Known as, conventional or the one patient normally uses. A patient always has a usual name.
@@ -747,9 +815,9 @@ class SearchPatient200ApplicationFhirPlusJSONEntryResourceNameUse(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceName:
-    
     family: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('family') }})
     r"""Family name (often called Surname)."""
     use: SearchPatient200ApplicationFhirPlusJSONEntryResourceNameUse = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('use') }})
@@ -779,16 +847,18 @@ class SearchPatient200ApplicationFhirPlusJSONEntryResourceName:
     suffix: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('suffix'), 'exclude': lambda f: f is None }})
     r"""Name suffices and postnominals."""
     
+
+
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceTelecomExtensionURL(str, Enum):
     r"""Definition of other contact system extension."""
     HTTPS_FHIR_HL7_ORG_UK_STRUCTURE_DEFINITION_EXTENSION_UK_CORE_OTHER_CONTACT_SYSTEM = 'https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-OtherContactSystem'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceTelecomExtensionValueCoding:
     r"""URL of specification of other contact systems."""
-    
     code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code'), 'exclude': lambda f: f is None }})
     r"""Coded value for the other contact system in place."""
     display: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display'), 'exclude': lambda f: f is None }})
@@ -797,27 +867,33 @@ class SearchPatient200ApplicationFhirPlusJSONEntryResourceTelecomExtensionValueC
     r"""URL of Code System that describes available contact relationships."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceTelecomExtension:
     r"""Wrapped object for other contact system details."""
-    
     url: Optional[SearchPatient200ApplicationFhirPlusJSONEntryResourceTelecomExtensionURL] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url'), 'exclude': lambda f: f is None }})
     r"""Definition of other contact system extension."""
     value_coding: Optional[SearchPatient200ApplicationFhirPlusJSONEntryResourceTelecomExtensionValueCoding] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('valueCoding'), 'exclude': lambda f: f is None }})
     r"""URL of specification of other contact systems."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceTelecomPeriod:
     r"""Business effective period when name was, is, or will be in use."""
-    
     start: date = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('start'), 'encoder': utils.dateisoformat(False), 'decoder': utils.datefromisoformat, 'mm_field': fields.DateTime(format='iso') }})
     r"""Start date of time period, if known, in format `yyyy-mm-dd`. Can be a future date."""
     end: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'mm_field': fields.DateTime(format='iso'), 'exclude': lambda f: f is None }})
     r"""End date of time period, if known and if not ongoing, in format `yyyy-mm-dd`. Can be a future date."""
     
+
+
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceTelecomSystem(str, Enum):
     r"""Means of communication, such as phone or email."""
     PHONE = 'phone'
@@ -834,10 +910,10 @@ class SearchPatient200ApplicationFhirPlusJSONEntryResourceTelecomUse(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchPatient200ApplicationFhirPlusJSONEntryResourceTelecom:
     r"""A contact point, such as a phone number or email address"""
-    
     system: SearchPatient200ApplicationFhirPlusJSONEntryResourceTelecomSystem = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('system') }})
     r"""Means of communication, such as phone or email."""
     value: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value') }})
@@ -855,10 +931,12 @@ class SearchPatient200ApplicationFhirPlusJSONEntryResourceTelecom:
     r"""Location associated with communication system."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchPatient200ApplicationFhirPlusJSONEntryResource:
-    
     address: Optional[list[SearchPatient200ApplicationFhirPlusJSONEntryResourceAddress]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('address'), 'exclude': lambda f: f is None }})
     r"""List of addresses associated with the patient.
     
@@ -918,29 +996,35 @@ class SearchPatient200ApplicationFhirPlusJSONEntryResource:
     """
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchPatient200ApplicationFhirPlusJSONEntrySearch:
-    
     score: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('score'), 'exclude': lambda f: f is None }})
     r"""Search score from 0.0 to 1.0."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchPatient200ApplicationFhirPlusJSONEntry:
-    
     full_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fullUrl'), 'exclude': lambda f: f is None }})
     r"""Absolute URL of the resource described in this item."""
     resource: Optional[SearchPatient200ApplicationFhirPlusJSONEntryResource] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('resource'), 'exclude': lambda f: f is None }})
     search: Optional[SearchPatient200ApplicationFhirPlusJSONEntrySearch] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('search'), 'exclude': lambda f: f is None }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchPatient200ApplicationFhirPlusJSON:
     r"""A completed search. This might contain zero, one or many matching patients, or it might contain a 'TOO_MANY_MATCHES' error."""
-    
     entry: Optional[list[SearchPatient200ApplicationFhirPlusJSONEntry]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entry'), 'exclude': lambda f: f is None }})
     r"""A list of matched patients. Empty if none found. The patients are ordered by match score, best first. A maximum of 50 patients are returned."""
     resource_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('resourceType'), 'exclude': lambda f: f is None }})
@@ -953,9 +1037,11 @@ class SearchPatient200ApplicationFhirPlusJSON:
     r"""FHIR Bundle Type."""
     
 
+
+
+
 @dataclasses.dataclass
 class SearchPatientResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     headers: Optional[dict[str, list[str]]] = dataclasses.field(default=None)
@@ -979,3 +1065,4 @@ class SearchPatientResponse:
     | 429         | TOO_MANY_REQUESTS          | You have exceeded your application's [rate limit](https://digital.nhs.uk/developer/guides-and-documentation/reference-guide#rate-limits). |
     """
     
+

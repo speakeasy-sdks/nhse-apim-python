@@ -1,0 +1,11 @@
+# GetRelatedPeople200ApplicationFhirPlusJSONEntryResourceAddressExtensionExtension2
+
+Value of the address key.
+
+
+## Fields
+
+| Field                                                                                         | Type                                                                                          | Required                                                                                      | Description                                                                                   | Example                                                                                       |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `url`                                                                                         | *str*                                                                                         | :heavy_check_mark:                                                                            | Always 'value'.                                                                               | value                                                                                         |
+| `value_string`                                                                                | *str*                                                                                         | :heavy_check_mark:                                                                            | Address key in PAF format. An 8 digit number including leading zeroes, formatted as a string. | 12345678                                                                                      |

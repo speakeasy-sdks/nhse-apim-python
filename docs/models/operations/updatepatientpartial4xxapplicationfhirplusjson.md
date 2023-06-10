@@ -1,0 +1,13 @@
+# UpdatePatientPartial4XXApplicationFhirPlusJSON
+
+Outcome of an operation that does not result in a resource or bundle being returned, for example an error or an async/batch submission.
+There are a number of possible error codes that can be returned along with a more detailed description in the `display` field.
+
+
+
+## Fields
+
+| Field                                                                                                                                       | Type                                                                                                                                        | Required                                                                                                                                    | Description                                                                                                                                 |
+| ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| `issue`                                                                                                                                     | list[[UpdatePatientPartial4XXApplicationFhirPlusJSONIssue](../../models/operations/updatepatientpartial4xxapplicationfhirplusjsonissue.md)] | :heavy_minus_sign:                                                                                                                          | List of issues that have occurred.                                                                                                          |
+| `resource_type`                                                                                                                             | *Optional[str]*                                                                                                                             | :heavy_minus_sign:                                                                                                                          | FHIR Resource Type.                                                                                                                         |
