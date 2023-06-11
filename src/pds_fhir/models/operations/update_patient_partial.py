@@ -22,7 +22,8 @@ class UpdatePatientPartialRequestBodyPatchesOp(str, Enum):
 @dataclasses.dataclass
 class UpdatePatientPartialRequestBodyPatchesValue3:
     r"""The information to be added or replaced. Should not be included on a remove."""
-    pass
+    
+
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
